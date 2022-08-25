@@ -14,7 +14,7 @@ class SendToAllCommand extends CommandHandler
     {
         $chatId = $this->update->user()->id;
         if ($chatId != config('telebot.admin_id')) {
-            SendTelegramMessage::dispatch($chatId, 'This command is for admin only')->onQueue('tgMessages');
+            return SendTelegramMessage::dispatch($chatId, 'This command is for admin only')->onQueue('tgMessages');
         }
         AskMessageHandler::requestInput($this->bot, $chatId);
 
