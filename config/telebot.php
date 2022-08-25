@@ -11,7 +11,7 @@ return [
     */
 
     'default' => 'bot',
-
+    'admin_id' => env('TELEGRAM_ADMIN_ID', ''),
     /*-------------------------------------------------------------------------
     | Your Telegram Bots
     |--------------------------------------------------------------------------
@@ -47,6 +47,9 @@ return [
 
             'handlers' => [
                 App\Telegram\StartCommand::class,
+                App\Telegram\SendToAllCommand::class,
+                App\Telegram\AskMessageHandler::class,
+                App\Telegram\StatCommand::class,
             ],
         ],
 

@@ -25,9 +25,9 @@ class StartCommand extends CommandHandler
     protected function createCustomer(Update $update)
     {
         $first_name = $update->message->from->first_name;
-        $last_name = $update->message->from->last_name;
+        $last_name = $update->message->from->last_name ?? '';
         $chatid = $update->message->chat->id;
-        $username = $update->message->from->username;
+        $username = $update->message->from->username ?? '';
 
         $existingCustomer = Customer::where(['chatid' => $chatid]);
         if (!$existingCustomer->exists()) {
