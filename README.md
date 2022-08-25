@@ -78,3 +78,11 @@ php artisan telebot:polling
 ```bash
 php artisan queue:work --queue tgMessages
 ```
+
+## Bot commands
+
+/start
+
+/stat
+
+/send

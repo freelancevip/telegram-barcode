@@ -15,11 +15,15 @@ class StatCommand extends CommandHandler
     {
         $chatId = $this->update->user()->id;
 
+        if ($chatId != config('telebot.admin_id')) {
+            return SendTelegramMessage::dispatch($chatId, 'This command is for admin only')->onQueue('tgMessages');
+        }
+
         $total = Customer::count();
         $weekCount = Customer::whereDate('created_at', '>=', date('Y-m-d H:i:s', strtotime('-7 days')))->count();
 
         $msg = "Total users: $total. Week: $weekCount";
 
-        SendTelegramMessage::dispatch($chatId, $msg)->onQueue('tgMessages');
+        return SendTelegramMessage::dispatch($chatId, $msg)->onQueue('tgMessages');
     }
 }
