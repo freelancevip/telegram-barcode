@@ -18,38 +18,38 @@ php artisan telebot:polling
 ## Supervisor
 
 ```
-/etc/supervisor/conf.d/laravel-worker.conf
-[program:laravel-worker]
-command=/path/to/php/php /path/to/app/artisan queue:work --queue default,tgMessages --sleep=3 --tries=3 --max-time=3600
+/etc/supervisor/conf.d/barcode-queue.conf
+[program:barcode-queue]
+command=/opt/php81/bin/php /var/www/telega/data/www/telega.4natic.ru/artisan queue:work --queue tgMessages --sleep=3 --tries=3 --max-time=3600
 autostart=true
 autorestart=true
 stopasgroup=true
 killasgroup=true
-user=your_user
+user=telega
 numprocs=1
 redirect_stderr=true
-stdout_logfile=/path/to/app/worker.log
+stdout_logfile=/var/www/telega/data/www/telega.4natic.ru/queue.log
 stopwaitsecs=3600
 
-/etc/supervisor/conf.d/telegram-polling.conf
-[program:telegram-polling]
-command=/path/to/php/php /path/to/app/artisan telebot:polling
+/etc/supervisor/conf.d/barcode-telegram-polling.conf
+[program:barcode-telegram-polling]
+command=/opt/php81/bin/php /var/www/telega/data/www/telega.4natic.ru/artisan telebot:polling
 autostart=true
 autorestart=true
 stopasgroup=true
 killasgroup=true
-user=your_user
+user=telega
 numprocs=1
 redirect_stderr=true
-stdout_logfile=/path/to/app/polling.log
+stdout_logfile=/var/www/telega/data/www/telega.4natic.ru/polling.log
 stopwaitsecs=3600
 ```
 
 ***restart***
 
 ```
-supervisorctl restart telegram-polling
-supervisorctl restart laravel-worker
+supervisorctl restart barcode-telegram-polling
+supervisorctl restart barcode-queue
 ```
 
 ## Админка
