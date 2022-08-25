@@ -11,80 +11,84 @@ class PermissionsTableSeeder extends Seeder
     {
         $permissions = [
             [
-                'id'    => 1,
+                'id' => 1,
                 'title' => 'user_management_access',
             ],
             [
-                'id'    => 2,
+                'id' => 2,
                 'title' => 'permission_create',
             ],
             [
-                'id'    => 3,
+                'id' => 3,
                 'title' => 'permission_edit',
             ],
             [
-                'id'    => 4,
+                'id' => 4,
                 'title' => 'permission_show',
             ],
             [
-                'id'    => 5,
+                'id' => 5,
                 'title' => 'permission_delete',
             ],
             [
-                'id'    => 6,
+                'id' => 6,
                 'title' => 'permission_access',
             ],
             [
-                'id'    => 7,
+                'id' => 7,
                 'title' => 'role_create',
             ],
             [
-                'id'    => 8,
+                'id' => 8,
                 'title' => 'role_edit',
             ],
             [
-                'id'    => 9,
+                'id' => 9,
                 'title' => 'role_show',
             ],
             [
-                'id'    => 10,
+                'id' => 10,
                 'title' => 'role_delete',
             ],
             [
-                'id'    => 11,
+                'id' => 11,
                 'title' => 'role_access',
             ],
             [
-                'id'    => 12,
+                'id' => 12,
                 'title' => 'user_create',
             ],
             [
-                'id'    => 13,
+                'id' => 13,
                 'title' => 'user_edit',
             ],
             [
-                'id'    => 14,
+                'id' => 14,
                 'title' => 'user_show',
             ],
             [
-                'id'    => 15,
+                'id' => 15,
                 'title' => 'user_delete',
             ],
             [
-                'id'    => 16,
+                'id' => 16,
                 'title' => 'user_access',
             ],
             [
-                'id'    => 17,
+                'id' => 17,
                 'title' => 'customer_show',
             ],
             [
-                'id'    => 18,
+                'id' => 18,
                 'title' => 'customer_access',
             ],
             [
-                'id'    => 19,
+                'id' => 19,
                 'title' => 'profile_password_edit',
+            ],
+            [
+                'id' => 20,
+                'title' => 'statistic_access',
             ],
         ];
 

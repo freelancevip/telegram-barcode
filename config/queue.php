@@ -90,4 +90,11 @@ return [
         'table' => 'failed_jobs',
     ],
 
+    'rateLimits' => [
+        'tgMessages' => [
+            'allows' => 29,
+            'every' => 1
+        ]
+    ],
+
 ];

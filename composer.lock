@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2a9b9f73853254f58955a497853f496",
+    "content-hash": "464adf170b25ec6f2cc447fda8f708e3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1759,6 +1759,67 @@
             "time": "2021-10-01T21:08:31+00:00"
         },
         {
+            "name": "mxl/laravel-queue-rate-limit",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mxl/laravel-queue-rate-limit.git",
+                "reference": "8135ac04f72bfd771a843881c12cac920ac9825e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mxl/laravel-queue-rate-limit/zipball/8135ac04f72bfd771a843881c12cac920ac9825e",
+                "reference": "8135ac04f72bfd771a843881c12cac920ac9825e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "^7.0||^8.0||^9.0",
+                "illuminate/contracts": "^7.0||^8.0||^9.0",
+                "illuminate/log": "^7.0||^8.0||^9.0",
+                "illuminate/queue": "^7.0||^8.0||^9.0",
+                "php": "^7.3||^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5||^8.0||^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MichaelLedin\\LaravelQueueRateLimit\\QueueServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MichaelLedin\\LaravelQueueRateLimit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Ledin",
+                    "email": "mledin89@gmail.com"
+                }
+            ],
+            "description": "Simple Laravel queue rate limiting",
+            "homepage": "https://github.com/mxl/laravel-queue-rate-limit",
+            "keywords": [
+                "Rate",
+                "laravel",
+                "limit",
+                "queue"
+            ],
+            "support": {
+                "issues": "https://github.com/mxl/laravel-queue-rate-limit/issues",
+                "source": "https://github.com/mxl/laravel-queue-rate-limit"
+            },
+            "time": "2022-03-03T11:55:51+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "2.56.0",
             "source": {
@@ -2127,6 +2188,92 @@
                 }
             ],
             "time": "2021-12-04T23:24:31+00:00"
+        },
+        {
+            "name": "picqer/php-barcode-generator",
+            "version": "v2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/picqer/php-barcode-generator.git",
+                "reference": "b98f110cc5a79f723688fb17fd90b9325300d844"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/picqer/php-barcode-generator/zipball/b98f110cc5a79f723688fb17fd90b9325300d844",
+                "reference": "b98f110cc5a79f723688fb17fd90b9325300d844",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "suggest": {
+                "ext-bcmath": "Barcode IMB (Intelligent Mail Barcode) needs bcmath extension",
+                "ext-gd": "For JPG and PNG generators, GD or Imagick is required",
+                "ext-imagick": "For JPG and PNG generators, GD or Imagick is required"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Picqer\\Barcode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "homepage": "http://nicolaasuni.tecnick.com"
+                },
+                {
+                    "name": "Casper Bakker",
+                    "email": "info@picqer.com",
+                    "homepage": "https://picqer.com"
+                }
+            ],
+            "description": "An easy to use, non-bloated, barcode generator in PHP. Creates SVG, PNG, JPG and HTML images from the most used 1D barcode standards.",
+            "homepage": "https://github.com/picqer/php-barcode-generator",
+            "keywords": [
+                "CODABAR",
+                "Code11",
+                "Code93",
+                "EAN13",
+                "KIX",
+                "KIXCODE",
+                "MSI",
+                "POSTNET",
+                "Pharma",
+                "Standard 2 of 5",
+                "barcode",
+                "barcode generator",
+                "code128",
+                "code39",
+                "ean",
+                "html",
+                "jpeg",
+                "jpg",
+                "php",
+                "png",
+                "svg",
+                "upc"
+            ],
+            "support": {
+                "issues": "https://github.com/picqer/php-barcode-generator/issues",
+                "source": "https://github.com/picqer/php-barcode-generator/tree/v2.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/casperbakker",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-01T08:27:26+00:00"
         },
         {
             "name": "psr/container",
@@ -5143,6 +5290,67 @@
             "time": "2021-03-09T10:59:23+00:00"
         },
         {
+            "name": "westacks/telebot",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/westacks/telebot.git",
+                "reference": "e2c2d62ee18f2dadb01aab6b809bc0148e08fb9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/westacks/telebot/zipball/e2c2d62ee18f2dadb01aab6b809bc0148e08fb9a",
+                "reference": "e2c2d62ee18f2dadb01aab6b809bc0148e08fb9a",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0 || ^9.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.8",
+                "laravel/pint": "^0.1.7",
+                "orchestra/testbench": "^3.5 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "php-coveralls/php-coveralls": "^2.2",
+                "phpunit/phpunit": "^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "WeStacks\\TeleBot\\Laravel\\Providers\\TeleBotServiceProvider"
+                    ],
+                    "aliases": {
+                        "TeleBot": "WeStacks\\TeleBot\\Laravel\\TeleBot"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WeStacks\\TeleBot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PunyFlash",
+                    "email": "puny.flash@gmail.com",
+                    "homepage": "https://github.com/PunyFlash"
+                }
+            ],
+            "description": "Easy way to create Telegram-bots in PHP",
+            "homepage": "https://github.com/westacks/telebot",
+            "support": {
+                "issues": "https://github.com/westacks/telebot/issues",
+                "source": "https://github.com/westacks/telebot/tree/2.2.0"
+            },
+            "time": "2022-08-23T16:08:43+00:00"
+        },
+        {
             "name": "yajra/laravel-datatables-oracle",
             "version": "v9.19.0",
             "source": {
@@ -8077,7 +8285,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0.2"
+        "php": "^8.0.2",
+        "ext-curl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
