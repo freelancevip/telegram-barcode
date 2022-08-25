@@ -2,6 +2,24 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Intervention\Image\Facades\Image;
+use Picqer\Barcode\BarcodeGeneratorJPG;
+
+Route::get('test', function () {
+    $generator = new BarcodeGeneratorJPG();
+    $resource = $generator->getBarcode('12345678', $generator::TYPE_EAN_13, 2, 100);
+
+    $border = 10;
+    $im = Image::make($resource);
+    $width = $im->getWidth();
+    $height = $im->getHeight();
+    $img_adj_width = $width + (2 * $border);
+    $img_adj_height = $height + (2 * $border);
+
+    $im->resizeCanvas($img_adj_width, $img_adj_height)->save('test.jpg');
+
+    echo '<img src="data:image/png;base64,'.base64_encode($im).'">';
+});
 
 Route::redirect('/', '/login');
 Route::get('/home', function () {

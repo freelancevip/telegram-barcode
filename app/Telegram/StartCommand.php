@@ -5,6 +5,7 @@ namespace App\Telegram;
 use App\Jobs\SendTelegramMessage;
 use App\Jobs\SendTelegramPhoto;
 use App\Models\Customer;
+use Intervention\Image\Facades\Image;
 use Picqer\Barcode\BarcodeGeneratorJPG;
 use WeStacks\TeleBot\Handlers\CommandHandler;
 use WeStacks\TeleBot\Objects\Update;
@@ -43,9 +44,18 @@ class StartCommand extends CommandHandler
     {
         $generator = new BarcodeGeneratorJPG();
         $number = $this->getNumber();
-        $path = config('barcode.store_path').$number.'.jpg';
+        $filename = $number.'.jpg';
+        $path = config('barcode.store_path').$filename;
         $resource = $generator->getBarcode($number, $generator::TYPE_EAN_13);
-        file_put_contents($path, $resource);
+
+        //
+        $border = 10;
+        $im = Image::make($resource);
+        $width = $im->getWidth() + (2 * $border);
+        $height = $im->getHeight() + (2 * $border);
+
+        $im->resizeCanvas($width, $height)->save($path);
+
         SendTelegramMessage::dispatch($update->message->chat->id, $number)->onQueue('tgMessages');
         SendTelegramPhoto::dispatch($update->message->chat->id, $path)->onQueue('tgMessages');
     }
