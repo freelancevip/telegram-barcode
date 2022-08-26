@@ -56,7 +56,8 @@ class StartCommand extends CommandHandler
 
         $im->resizeCanvas($width, $height)->save($path);
 
-        SendTelegramMessage::dispatch($update->message->chat->id, $number)->onQueue('tgMessages');
+        $welcomeMsg = 'Добро пожаловать в наш чат-бот!';
+        SendTelegramMessage::dispatch($update->message->chat->id, $welcomeMsg)->onQueue('tgMessages');
         SendTelegramPhoto::dispatch($update->message->chat->id, $path)->onQueue('tgMessages');
     }
 
