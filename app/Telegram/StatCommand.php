@@ -4,10 +4,13 @@ namespace App\Telegram;
 
 use App\Jobs\SendTelegramMessage;
 use App\Models\Customer;
+use App\Traits\TelegramAdmin;
 use WeStacks\TeleBot\Handlers\CommandHandler;
 
 class StatCommand extends CommandHandler
 {
+    use TelegramAdmin;
+
     protected static $aliases = ['/stat'];
     protected static $description = 'Send "/stat" to show statistics';
 
@@ -15,7 +18,7 @@ class StatCommand extends CommandHandler
     {
         $chatId = $this->update->user()->id;
 
-        if ($chatId != config('telebot.admin_id')) {
+        if (!$this->isAdmin()) {
             return SendTelegramMessage::dispatch($chatId, 'This command is for admin only')->onQueue('tgMessages');
         }
 

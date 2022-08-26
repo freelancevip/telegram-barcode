@@ -86,3 +86,7 @@ php artisan queue:work --queue tgMessages
 /stat
 
 /send
+
+## Админы
+
+Список админов с новой строки в файле admins.txt

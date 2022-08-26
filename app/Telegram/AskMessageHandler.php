@@ -31,7 +31,7 @@ class AskMessageHandler extends RequestInputHandler
             SendTelegramMessage::dispatch($customer->chatid, $message)->onQueue('tgMessages');
         }
 
-        return SendTelegramMessage::dispatch(config('telebot.admin_id'),
+        return SendTelegramMessage::dispatch($this->update->message->chat->id,
             'Your message added to queue successfully.')->onQueue('tgMessages');
     }
 }
