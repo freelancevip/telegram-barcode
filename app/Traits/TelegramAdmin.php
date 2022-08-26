@@ -9,4 +9,10 @@ trait TelegramAdmin
         $admins = file(base_path().'/admins.txt', FILE_SKIP_EMPTY_LINES);
         return in_array($this->update->user()->id, $admins);
     }
+
+    function checkAdmin($chatId): bool
+    {
+        $admins = file(base_path().'/admins.txt', FILE_SKIP_EMPTY_LINES);
+        return in_array($chatId, $admins);
+    }
 }
