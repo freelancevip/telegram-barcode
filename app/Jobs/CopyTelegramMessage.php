@@ -38,18 +38,21 @@ class CopyTelegramMessage implements ShouldQueue
      */
     public function handle()
     {
-        $parameters = [
-            'chat_id' => $this->chatID,
-            'from_chat_id' => $this->from_chat_id,
-            'message_id' => $this->message_id,
-        ];
+        try {
+            $parameters = [
+                'chat_id' => $this->chatID,
+                'from_chat_id' => $this->from_chat_id,
+                'message_id' => $this->message_id,
+            ];
 
-        $parameters = $this->addMenu($parameters);
+            $parameters = $this->addMenu($parameters);
 
-        $copied = TeleBot::bot('bot')->copyMessage($parameters)->toArray();
+            $copied = TeleBot::bot('bot')->copyMessage($parameters)->toArray();
 
-        TeleBot::bot('bot')->forwardMessage($copied);
-
+            TeleBot::bot('bot')->forwardMessage($copied);
+        } catch (\Throwable $t) {
+            //
+        }
     }
 
     function addMenu($parameters)
