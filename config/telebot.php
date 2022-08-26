@@ -48,7 +48,7 @@ return [
             'handlers' => [
                 App\Telegram\StartCommand::class,
                 App\Telegram\SendToAllCommand::class,
-                App\Telegram\AskMessageHandler::class,
+                App\Telegram\AskMessageHandlerCustom::class,
                 App\Telegram\StatCommand::class,
             ],
         ],

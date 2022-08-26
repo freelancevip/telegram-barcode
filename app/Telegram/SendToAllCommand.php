@@ -19,7 +19,7 @@ class SendToAllCommand extends CommandHandler
         if (!$this->isAdmin()) {
             return SendTelegramMessage::dispatch($chatId, 'This command is for admin only')->onQueue('tgMessages');
         }
-        AskMessageHandler::requestInput($this->bot, $chatId);
+        AskMessageHandlerCustom::requestInput($this->bot, $chatId);
 
         return SendTelegramMessage::dispatch($chatId, 'Please, type your message.')->onQueue('tgMessages');
     }
